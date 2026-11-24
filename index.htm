@@ -997,13 +997,41 @@
               <label class="block font-medium text-gray-700 mb-1 text-xs">Masa STNK <span class="text-red-500">*</span></label>
               <input type="date" id="unit-stnk" name="stnk" required class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-xs">
             </div>
-            <div>
-              <label class="block font-medium text-gray-600 mb-1 text-xs">Masa KIR <span class="text-xs text-gray-400">(Opsional)</span></label>
-              <input type="date" id="unit-kir" name="kir" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-xs">
+            <div class="p-2.5 rounded-xl border border-gray-200 bg-gray-50/70 space-y-1.5">
+              <div class="flex items-center justify-between gap-1.5">
+                <label class="block font-semibold text-gray-700 text-xs">Masa KIR</label>
+                <select id="unit-kir-mode" onchange="toggleOptionalDocMode('unit', 'kir')" class="px-2 py-1 border border-gray-300 rounded-lg text-[11px] font-semibold bg-white text-gray-700 outline-none focus:ring-2 focus:ring-indigo-500">
+                  <option value="show">Wajib / Tampilkan</option>
+                  <option value="hide">Tidak Perlu (Sembunyikan)</option>
+                </select>
+              </div>
+              <div id="unit-kir-input-wrap" class="flex items-center gap-1.5">
+                <input type="date" id="unit-kir" name="kir" class="w-full px-3 py-1.5 border rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-xs bg-white">
+                <button type="button" onclick="clearOptionalDocDate('unit', 'kir')" class="px-2.5 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 rounded-xl text-xs font-bold shrink-0" title="Hapus Tanggal KIR">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <p id="unit-kir-hidden-note" class="hidden text-[11px] text-gray-500 italic py-1">
+                <i class="fa-solid fa-eye-slash mr-1 text-gray-400"></i>Keterangan KIR tidak ditampilkan untuk unit ini.
+              </p>
             </div>
-            <div>
-              <label class="block font-medium text-gray-600 mb-1 text-xs">Masa KPS <span class="text-xs text-gray-400">(Opsional)</span></label>
-              <input type="date" id="unit-kps" name="kps" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-xs">
+            <div class="p-2.5 rounded-xl border border-gray-200 bg-gray-50/70 space-y-1.5">
+              <div class="flex items-center justify-between gap-1.5">
+                <label class="block font-semibold text-gray-700 text-xs">Masa KPS</label>
+                <select id="unit-kps-mode" onchange="toggleOptionalDocMode('unit', 'kps')" class="px-2 py-1 border border-gray-300 rounded-lg text-[11px] font-semibold bg-white text-gray-700 outline-none focus:ring-2 focus:ring-indigo-500">
+                  <option value="show">Wajib / Tampilkan</option>
+                  <option value="hide">Tidak Perlu (Sembunyikan)</option>
+                </select>
+              </div>
+              <div id="unit-kps-input-wrap" class="flex items-center gap-1.5">
+                <input type="date" id="unit-kps" name="kps" class="w-full px-3 py-1.5 border rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-xs bg-white">
+                <button type="button" onclick="clearOptionalDocDate('unit', 'kps')" class="px-2.5 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 rounded-xl text-xs font-bold shrink-0" title="Hapus Tanggal KPS">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <p id="unit-kps-hidden-note" class="hidden text-[11px] text-gray-500 italic py-1">
+                <i class="fa-solid fa-eye-slash mr-1 text-gray-400"></i>Keterangan KPS tidak ditampilkan untuk unit ini.
+              </p>
             </div>
           </div>
         </div>
@@ -1112,13 +1140,41 @@
             <label class="block font-medium text-gray-700 mb-1 text-xs">Masa Kadaluarsa STNK</label>
             <input type="date" id="update-stnk" name="stnk" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-xs">
           </div>
-          <div>
-            <label class="block font-medium text-gray-700 mb-1 text-xs">Masa Kadaluarsa KIR</label>
-            <input type="date" id="update-kir" name="kir" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-xs">
+          <div class="p-2.5 rounded-xl border border-gray-200 bg-gray-50/70 space-y-1.5">
+            <div class="flex items-center justify-between gap-1.5">
+              <label class="block font-semibold text-gray-700 text-xs">Masa KIR</label>
+              <select id="update-kir-mode" onchange="toggleOptionalDocMode('update', 'kir')" class="px-2 py-1 border border-gray-300 rounded-lg text-[11px] font-semibold bg-white text-gray-700 outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="show">Wajib / Tampilkan</option>
+                <option value="hide">Tidak Perlu (Sembunyikan)</option>
+              </select>
+            </div>
+            <div id="update-kir-input-wrap" class="flex items-center gap-1.5">
+              <input type="date" id="update-kir" name="kir" class="w-full px-3 py-1.5 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-xs bg-white">
+              <button type="button" onclick="clearOptionalDocDate('update', 'kir')" class="px-2.5 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 rounded-xl text-xs font-bold shrink-0" title="Hapus Tanggal KIR">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <p id="update-kir-hidden-note" class="hidden text-[11px] text-gray-500 italic py-1">
+              <i class="fa-solid fa-eye-slash mr-1 text-gray-400"></i>Keterangan KIR tidak ditampilkan untuk unit ini.
+            </p>
           </div>
-          <div>
-            <label class="block font-medium text-gray-700 mb-1 text-xs">Masa Kadaluarsa KPS</label>
-            <input type="date" id="update-kps" name="kps" class="w-full px-3 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-xs">
+          <div class="p-2.5 rounded-xl border border-gray-200 bg-gray-50/70 space-y-1.5">
+            <div class="flex items-center justify-between gap-1.5">
+              <label class="block font-semibold text-gray-700 text-xs">Masa KPS</label>
+              <select id="update-kps-mode" onchange="toggleOptionalDocMode('update', 'kps')" class="px-2 py-1 border border-gray-300 rounded-lg text-[11px] font-semibold bg-white text-gray-700 outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="show">Wajib / Tampilkan</option>
+                <option value="hide">Tidak Perlu (Sembunyikan)</option>
+              </select>
+            </div>
+            <div id="update-kps-input-wrap" class="flex items-center gap-1.5">
+              <input type="date" id="update-kps" name="kps" class="w-full px-3 py-1.5 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-xs bg-white">
+              <button type="button" onclick="clearOptionalDocDate('update', 'kps')" class="px-2.5 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 rounded-xl text-xs font-bold shrink-0" title="Hapus Tanggal KPS">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <p id="update-kps-hidden-note" class="hidden text-[11px] text-gray-500 italic py-1">
+              <i class="fa-solid fa-eye-slash mr-1 text-gray-400"></i>Keterangan KPS tidak ditampilkan untuk unit ini.
+            </p>
           </div>
         </div>
 
@@ -3302,9 +3358,35 @@
     // =========================================================================
     // UNIT CRUD & PENCARIAN
     // =========================================================================
+    function toggleOptionalDocMode(prefix, docKey) {
+      const modeEl = document.getElementById(`${prefix}-${docKey}-mode`);
+      const wrapEl = document.getElementById(`${prefix}-${docKey}-input-wrap`);
+      const noteEl = document.getElementById(`${prefix}-${docKey}-hidden-note`);
+      const dateEl = document.getElementById(`${prefix}-${docKey}`);
+      if (!modeEl) return;
+
+      if (modeEl.value === 'hide') {
+        if (dateEl) dateEl.value = '';
+        if (wrapEl) wrapEl.classList.add('hidden');
+        if (noteEl) noteEl.classList.remove('hidden');
+      } else {
+        if (wrapEl) wrapEl.classList.remove('hidden');
+        if (noteEl) noteEl.classList.add('hidden');
+      }
+    }
+
+    function clearOptionalDocDate(prefix, docKey) {
+      const dateEl = document.getElementById(`${prefix}-${docKey}`);
+      if (dateEl) dateEl.value = '';
+    }
+
     function openModalTambahUnit() {
       document.getElementById('form-tambah-unit').reset();
       populateDropdowns();
+      document.getElementById('unit-kir-mode').value = 'show';
+      toggleOptionalDocMode('unit', 'kir');
+      document.getElementById('unit-kps-mode').value = 'show';
+      toggleOptionalDocMode('unit', 'kps');
       document.getElementById('data-tambah-foto-unit').value = '';
       const prev = document.getElementById('preview-tambah-foto-unit');
       prev.src = BLANK_GIF;
@@ -3322,6 +3404,8 @@
       btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan...';
 
       const form = e.target;
+      const kirVal = document.getElementById('unit-kir-mode').value === 'hide' ? null : (form.kir.value || null);
+      const kpsVal = document.getElementById('unit-kps-mode').value === 'hide' ? null : (form.kps.value || null);
       try {
         const { data, error } = await supabaseClient.rpc('tambah_data_unit', {
           p_pt_id: currentSession.pt ? currentSession.pt.id : null,
@@ -3332,8 +3416,8 @@
           p_tahun: form.tahun.value ? parseInt(form.tahun.value, 10) : null,
           p_pajak: form.pajak.value || null,
           p_stnk: form.stnk.value || null,
-          p_kir: form.kir.value || null,
-          p_kps: form.kps.value || null,
+          p_kir: kirVal,
+          p_kps: kpsVal,
           p_foto_unit: document.getElementById('data-tambah-foto-unit').value || null
         });
         if (error) throw error;
@@ -3594,8 +3678,8 @@
                 </div>
                 <div><span class="text-gray-500 block text-xs">Masa Pajak:</span> <span class="${checkStatus(u.pajak).class}">${checkStatus(u.pajak).text}</span></div>
                 <div><span class="text-gray-500 block text-xs">Masa STNK:</span> <span class="${checkStatus(u.stnk).class}">${checkStatus(u.stnk).text}</span></div>
-                <div><span class="text-gray-500 block text-xs">Masa KIR:</span> <span class="${checkStatus(u.kir).class}">${checkStatus(u.kir).text}</span></div>
-                <div><span class="text-gray-500 block text-xs">Masa KPS:</span> <span class="${checkStatus(u.kps).class}">${checkStatus(u.kps).text}</span></div>
+                ${(u.kir && String(u.kir).trim() !== '' && String(u.kir).trim() !== '-') ? `<div><span class="text-gray-500 block text-xs">Masa KIR:</span> <span class="${checkStatus(u.kir).class}">${checkStatus(u.kir).text}</span></div>` : ''}
+                ${(u.kps && String(u.kps).trim() !== '' && String(u.kps).trim() !== '-') ? `<div><span class="text-gray-500 block text-xs">Masa KPS:</span> <span class="${checkStatus(u.kps).class}">${checkStatus(u.kps).text}</span></div>` : ''}
               </div>
             </div>
             ${canEdit ? `
@@ -3624,13 +3708,22 @@
 
     function openModalUpdateBerkas(noPol, pajak, stnk, kir, kps) {
       const unitObj = (rawData.unit || []).find(u => u.noPol === noPol);
+      const kirInputVal = formatDateToInput(kir);
+      const kpsInputVal = formatDateToInput(kps);
+
       document.getElementById('update-nopol-target').value = noPol;
       document.getElementById('update-nopol-display').innerText = noPol;
       document.getElementById('update-jenis').value = unitObj ? (unitObj.jenis || '') : '';
       document.getElementById('update-pajak').value = formatDateToInput(pajak);
       document.getElementById('update-stnk').value = formatDateToInput(stnk);
-      document.getElementById('update-kir').value = formatDateToInput(kir);
-      document.getElementById('update-kps').value = formatDateToInput(kps);
+
+      document.getElementById('update-kir').value = kirInputVal;
+      document.getElementById('update-kir-mode').value = kirInputVal ? 'show' : 'hide';
+      toggleOptionalDocMode('update', 'kir');
+
+      document.getElementById('update-kps').value = kpsInputVal;
+      document.getElementById('update-kps-mode').value = kpsInputVal ? 'show' : 'hide';
+      toggleOptionalDocMode('update', 'kps');
 
       const existingFoto = unitObj ? (unitObj.fotoUnit || '') : '';
       document.getElementById('data-update-foto-unit').value = existingFoto;
@@ -3656,6 +3749,8 @@
       btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan...';
 
       const form = e.target;
+      const kirVal = document.getElementById('update-kir-mode').value === 'hide' ? null : (form.kir.value || null);
+      const kpsVal = document.getElementById('update-kps-mode').value === 'hide' ? null : (form.kps.value || null);
       try {
         const { data, error } = await supabaseClient.rpc('update_berkas_unit', {
           p_pt_id: currentSession.pt ? currentSession.pt.id : null,
@@ -3663,8 +3758,8 @@
           p_no_pol: form.noPolTarget.value,
           p_pajak: form.pajak.value || null,
           p_stnk: form.stnk.value || null,
-          p_kir: form.kir.value || null,
-          p_kps: form.kps.value || null,
+          p_kir: kirVal,
+          p_kps: kpsVal,
           p_foto_unit: document.getElementById('data-update-foto-unit').value || null,
           p_jenis: form.jenis.value.trim() || null
         });
@@ -3742,7 +3837,9 @@
       const bodyRows = units.map((u, i) => {
         const baseRow = [
           u.noPol || '-', u.jenis || '-', u.cabang || '-', u.tahun || '-',
-          checkStatus(u.pajak).text, checkStatus(u.stnk).text, checkStatus(u.kir).text, checkStatus(u.kps).text
+          checkStatus(u.pajak).text, checkStatus(u.stnk).text,
+          u.kir ? checkStatus(u.kir).text : 'Tidak Perlu',
+          u.kps ? checkStatus(u.kps).text : 'Tidak Perlu'
         ];
         return includeFoto ? [i + 1, '', ...baseRow] : [i + 1, ...baseRow];
       });
@@ -3831,8 +3928,8 @@
           tahun: u.tahun || '-',
           pajak: checkStatus(u.pajak).text,
           stnk: checkStatus(u.stnk).text,
-          kir: checkStatus(u.kir).text,
-          kps: checkStatus(u.kps).text
+          kir: u.kir ? checkStatus(u.kir).text : 'Tidak Perlu',
+          kps: u.kps ? checkStatus(u.kps).text : 'Tidak Perlu' 
         });
 
         if (includeFoto && u.fotoUnit && u.fotoUnit.startsWith('data:image/')) {
